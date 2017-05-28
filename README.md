@@ -26,4 +26,7 @@ angular.module('App').directive('replyDetailDirective',['PreviewPictureFactory',
 
 (4)loop{Boolean}:是否循环显示图片，默认false。
 
+## demo
+https://spring-fe.github.io/angular-preview-picture/
+
 
