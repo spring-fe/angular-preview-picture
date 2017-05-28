@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>test</title>
+		<style type="text/css">
+		    body{
+		    	padding: 100px;
+		    }
+			span#preview{
+				display: inline-block;
+				width: 150px;
+				height: 38px;
+				line-height: 38px;
+				background: #50c124;
+				font-size: 16px;
+				text-align: center;
+				color: white;
+				border-radius: 2px;
+				-webkit-border-radius: 2px;
+				cursor: pointer;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="src/css/lightBox.css"/>
+		<script type="text/javascript" src="lib/angular.js"></script>
+		<script type="text/javascript" src="lib/jquery.js"></script>
+		<script type="text/javascript" src="src/index.js"></script>
+	</head>
+	<body>
+		<span id="preview">点击预览图片</span>
+		
+	</body>
+	<script>
+		var imagesArr = [
+			'preview-images/image_3.jpeg',
+			'preview-images/image_2.jpeg',
+			'preview-images/image_1.jpeg',
+			'preview-images/image_4.jpeg',
+			'preview-images/image_5.jpeg'
+		]
+		$(document).ready(function () {
+			$("span").on("click", function () {
+				var $injector = angular.injector(['wbgComponent']);
+				var PreviewPictureFactory = $injector.get('PreviewPictureFactory');
+				PreviewPictureFactory.open(imagesArr, 0);
+			})
+		})
+	</script>
+</html>
